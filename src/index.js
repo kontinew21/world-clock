@@ -446,3 +446,19 @@ citiesArray.forEach(function(city){
     selectElement.add(option)
 });
 
+let myCityGuess = moment.tz.guess();
+let myCityTimeElement = document.querySelector(".my-city-time");
+myCityTimeElement.innerHTML = moment.tz(myCityGuess).format("hh:mm A");
+let myCityDetailName = document.querySelector(".mycityname");
+let myCityName;
+
+citiesArray.forEach(function(cities){
+    if(cities.timezones === myCityGuess){
+        myCityName = cities.name;
+    }
+});
+
+myCityDetailName.innerHTML = myCityName;
+let myCityDetailDate = document.querySelector(".mycitydate");
+myCityDetailDate.innerHTML = moment.tz(myCityGuess).format("dddd, Do MMMM YYYY");
+
