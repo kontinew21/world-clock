@@ -456,8 +456,13 @@ selectElement.addEventListener("change", function(event){
     let sdCityDate = selectedCityElement.querySelector(".sdCityDate");
     sdCityDate.innerHTML = moment.tz(event.target.value).format("dddd, Do MMMM YYYY");
 
-    let sdCityTime = selectedCityElement.querySelector(".sdCityTime");
-    sdCityTime.innerHTML = moment.tz(event.target.value).format("hh:mm A");
+    function setSelectedCityTime(){
+        let sdCityTime = selectedCityElement.querySelector(".sdCityTime");
+        sdCityTime.innerHTML = moment.tz(event.target.value).format("hh:mm:ss A");
+    }
+    
+    setSelectedCityTime();
+    setInterval(setSelectedCityTime, 1000);
 
     if(event.target.value === ""){
         myCityElement.style.display = "flex";
@@ -466,9 +471,12 @@ selectElement.addEventListener("change", function(event){
     };
 });
 
+function setMyCityTime(){
+    let myCityTimeElement = document.querySelector(".my-city-time");
+    myCityTimeElement.innerHTML = moment.tz(myCityGuess).format("hh:mm:ss A");
+}
 let myCityGuess = moment.tz.guess();
-let myCityTimeElement = document.querySelector(".my-city-time");
-myCityTimeElement.innerHTML = moment.tz(myCityGuess).format("hh:mm A");
+setInterval(setMyCityTime, 1000);
 let myCityDetailName = document.querySelector(".mycityname");
 let myCityName;
 
