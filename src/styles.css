@@ -62,6 +62,43 @@ select {
     padding: 0 15px 0 0;
 }
 
+.selectedCity {
+    display: none;
+    flex-direction: row;
+    width: 95%;
+    margin: 20px auto;
+    padding: 30px 0;
+    background-color: #f4f4f4;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.sdCityDetails {
+    width: 50%;
+    margin: auto auto auto 0;
+    text-align: start;
+    padding: 0 0 0 20px;
+}
+
+.sdCityName {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.sdCityDate {
+    font-style: italic;
+    font-size: 20px;
+}
+
+.sdCityTime {
+    width: 50%;
+    margin: auto;
+    font-size: 60px;
+    text-align: end;
+    padding: 0 20px 0 0;
+    font-weight: bold;
+}
+
 .cities {
     margin: 25px auto;
     display: flex;
@@ -78,9 +115,11 @@ select {
     width: 90%;
 }
 
-h2 {
-    font-size: 25px;
-    margin: 0 0 8px 0;
+.cityLabel {
+    width: 90%;
+    font-size: 20px;
+    margin: 0 auto 8px auto;
+    font-weight: 600;
 }
 
 .city hr {

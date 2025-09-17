@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="src/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.6.0/moment-timezone-with-data-1970-2030.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 </head>
 
 <body>
@@ -27,58 +29,66 @@
                 <div class="mycitydate"></div>
             </div>
         </div>
+        
+        <div class="selectedCity">
+            <div class="sdCityDetails">
+                <div class="sdCityName">Durban</div>
+                <div class="sdCityDate">Wednesday, 17th September 2025</div>
+            </div>
+            <div class="sdCityTime">07:56 PM</div>
+        </div>
 
         <div class="cities">
-            <div class="city">
-                <h2>Los Angeles</h2>
-                <div class="date">Tuesday,<br /> 16<sup>th</sup> September 2025</div>
+            <div class="city" id="cityOne">
+                <div class="cityLabel"></div>
+                <div class="date"></div>
                 <hr />
                 <div class="time-container">
                     <div class="time">
-                        <div class="hour">17</div>
-                        <div class="min">21</div>
+                        <div class="hour"></div>
+                        <div class="min"></div>
                     </div>
                     <div class="time-symbols">
                         <div class="symbol">:</div>
-                        <div class="period">PM</div>
+                        <div class="period"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="city">
-                <h2>Sydney</h2>
-                <div class="date">Tuesday,<br /> 16<sup>th</sup> September 2025</div>
+            <div class="city" id="cityTwo">
+                <div class="cityLabel"></div>
+                <div class="date"></div>
                 <hr />
                 <div class="time-container">
                     <div class="time">
-                        <div class="hour">17</div>
-                        <div class="min">21</div>
+                        <div class="hour"></div>
+                        <div class="min"></div>
                     </div>
                     <div class="time-symbols">
                         <div class="symbol">:</div>
-                        <div class="period">PM</div>
+                        <div class="period"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="city">
-                <h2>Tokyo</h2>
-                <div class="date">Tuesday,<br /> 16<sup>th</sup> September 2025</div>
+            <div class="city" id="cityThree">
+                <div class="cityLabel"></div>
+                <div class="date"></div>
                 <hr />
                 <div class="time-container">
                     <div class="time">
-                        <div class="hour">17</div>
-                        <div class="min">21</div>
+                        <div class="hour"></div>
+                        <div class="min"></div>
                     </div>
                     <div class="time-symbols">
                         <div class="symbol">:</div>
-                        <div class="period">PM</div>
+                        <div class="period"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="map"></div>
+        <div class="map" id="map"></div>
 
         <hr />
 
