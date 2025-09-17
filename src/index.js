@@ -446,6 +446,37 @@ citiesArray.forEach(function(city){
     selectElement.add(option)
 });
 
+selectElement.addEventListener("change", function(event){
+    let myCityElement = document.querySelector(".my-city");
+    myCityElement.style.display = "none";
+
+    let citiesElement = document.querySelector(".cities");
+    citiesElement.style.display = "none";
+
+    let selectedCityElement = document.querySelector(".selectedCity");
+    selectedCityElement.style.display = "flex"
+
+    let sdCityName = selectedCityElement.querySelector(".sdCityName");
+    citiesArray.forEach(function(sdCity){
+        if(sdCity.timezones === event.target.value){
+            sdCityName.innerHTML = sdCity.name;
+            return true;
+        };
+    });
+
+    let sdCityDate = selectedCityElement.querySelector(".sdCityDate");
+    sdCityDate.innerHTML = moment.tz(event.target.value).format("dddd, Do MMMM YYYY");
+
+    let sdCityTime = selectedCityElement.querySelector(".sdCityTime");
+    sdCityTime.innerHTML = moment.tz(event.target.value).format("hh:mm A");
+
+    if(event.target.value === ""){
+        myCityElement.style.display = "flex";
+        citiesElement.style.display = "flex";
+        selectedCityElement.style.display = "none";
+    };
+});
+
 let myCityGuess = moment.tz.guess();
 let myCityTimeElement = document.querySelector(".my-city-time");
 myCityTimeElement.innerHTML = moment.tz(myCityGuess).format("hh:mm A");
