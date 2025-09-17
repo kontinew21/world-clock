@@ -475,7 +475,9 @@ function setMyCityTime(){
     let myCityTimeElement = document.querySelector(".my-city-time");
     myCityTimeElement.innerHTML = moment.tz(myCityGuess).format("hh:mm:ss A");
 }
+
 let myCityGuess = moment.tz.guess();
+setMyCityTime();
 setInterval(setMyCityTime, 1000);
 let myCityDetailName = document.querySelector(".mycityname");
 let myCityName;
@@ -497,12 +499,7 @@ let cityOneLabel = cityOne.querySelector(".cityLabel");
 cityOneLabel.innerHTML = randomCityOne.name;
 let cityOneDate = cityOne.querySelector(".date");
 cityOneDate.innerHTML = moment.tz(randomCityOne.timezones).format("dddd, [<br />] Do MMMM YYYY");
-let cityOneHour = cityOne.querySelector(".hour");
-cityOneHour.innerHTML = moment.tz(randomCityOne.timezones).format("hh");
-let cityOneMin = cityOne.querySelector(".min");
-cityOneMin.innerHTML = moment.tz(randomCityOne.timezones).format("mm");
-let cityOnePeriod = cityOne.querySelector(".period");
-cityOnePeriod.innerHTML = moment.tz(randomCityOne.timezones).format("A");
+
 
 let randomNumberTwo = Math.floor(Math.random() * citiesArray.length) + 1;
 let randomCityTwo = citiesArray[(randomNumberTwo + 1)];
@@ -511,12 +508,6 @@ let cityTwoLabel = cityTwo.querySelector(".cityLabel");
 cityTwoLabel.innerHTML = randomCityTwo.name;
 let cityTwoDate = cityTwo.querySelector(".date");
 cityTwoDate.innerHTML = moment.tz(randomCityTwo.timezones).format("dddd, [<br />] Do MMMM YYYY");
-let cityTwoHour = cityTwo.querySelector(".hour");
-cityTwoHour.innerHTML = moment.tz(randomCityTwo.timezones).format("hh");
-let cityTwoMin = cityTwo.querySelector(".min");
-cityTwoMin.innerHTML = moment.tz(randomCityTwo.timezones).format("mm");
-let cityTwoPeriod = cityTwo.querySelector(".period");
-cityTwoPeriod.innerHTML = moment.tz(randomCityTwo.timezones).format("A");
 
 let randomNumberThree = Math.floor(Math.random() * citiesArray.length) + 1;
 let randomCityThree = citiesArray[(randomNumberThree + 1)];
@@ -525,9 +516,15 @@ let cityThreeLabel = cityThree.querySelector(".cityLabel");
 cityThreeLabel.innerHTML = randomCityThree.name;
 let cityThreeDate = cityThree.querySelector(".date");
 cityThreeDate.innerHTML = moment.tz(randomCityThree.timezones).format("dddd, [<br />] Do MMMM YYYY");
-let cityThreeHour = cityThree.querySelector(".hour");
-cityThreeHour.innerHTML = moment.tz(randomCityThree.timezones).format("hh");
-let cityThreeMin = cityThree.querySelector(".min");
-cityThreeMin.innerHTML = moment.tz(randomCityThree.timezones).format("mm");
-let cityThreePeriod = cityThree.querySelector(".period");
-cityThreePeriod.innerHTML = moment.tz(randomCityThree.timezones).format("A");
+
+function updateRandomTimes(){
+    let cityOneTime = cityOne.querySelector(".time");
+    cityOneTime.innerHTML = moment.tz(randomCityOne.timezones).format("hh:mm:ss A");
+    let cityTwoTime = cityTwo.querySelector(".time");
+    cityTwoTime.innerHTML = moment.tz(randomCityTwo.timezones).format("hh:mm:ss A");
+    let cityThreeTime = cityThree.querySelector(".time");
+    cityThreeTime.innerHTML = moment.tz(randomCityThree.timezones).format("hh:mm:ss A");
+}
+
+updateRandomTimes();
+setInterval(updateRandomTimes, 1000);
