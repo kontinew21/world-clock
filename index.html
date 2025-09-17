@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock by cybermoon21k</title>
     <link rel="stylesheet" href="src/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.6.0/moment-timezone-with-data-1970-2030.js"></script>
 </head>
 
 <body>
@@ -18,10 +20,18 @@
             <option value="">Choose a city...</option>
         </select>
 
+        <div class="my-city">
+            <div class="my-city-time"></div>
+            <div class="my-city-details">
+                <div class="mycityname"></div>
+                <div class="mycitydate"></div>
+            </div>
+        </div>
+
         <div class="cities">
             <div class="city">
                 <h2>Los Angeles</h2>
-                <div class="date">Tuesday,<br /> 6th September 2025</div>
+                <div class="date">Tuesday,<br /> 16<sup>th</sup> September 2025</div>
                 <hr />
                 <div class="time-container">
                     <div class="time">
@@ -37,7 +47,7 @@
 
             <div class="city">
                 <h2>Sydney</h2>
-                <div class="date">Tuesday,<br /> 6th September 2025</div>
+                <div class="date">Tuesday,<br /> 16<sup>th</sup> September 2025</div>
                 <hr />
                 <div class="time-container">
                     <div class="time">
@@ -53,7 +63,7 @@
 
             <div class="city">
                 <h2>Tokyo</h2>
-                <div class="date">Tuesday,<br /> 6th September 2025</div>
+                <div class="date">Tuesday,<br /> 16<sup>th</sup> September 2025</div>
                 <hr />
                 <div class="time-container">
                     <div class="time">

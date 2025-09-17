@@ -35,6 +35,33 @@ select {
     margin-top: 20px;
 }
 
+.my-city {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    border-radius: 10px;
+}
+
+.my-city-time {
+    width: 50%;
+    margin: auto;
+    font-size: 55px;
+    text-align: start;
+    padding: 0 0 0 15px;
+    font-weight: bold;
+}
+
+.my-city-details {
+    width: 50%;
+    margin: auto 0 auto auto;
+    text-align: end;
+    padding: 0 15px 0 0;
+}
+
 .cities {
     margin: 25px auto;
     display: flex;
